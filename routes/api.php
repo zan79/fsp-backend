@@ -23,10 +23,10 @@ Route::group(['middleware'=>'auth:api'], function(){
     Route::get('/user', [AuthController::class, 'me']);
     Route::post('/logout',[AuthController::class, 'logout']);
 
-    Route::post('/gadets/search', [GadgetController::class, 'search']);
-    Route::post('/gadets', [GadgetController::class, 'store']);
-    Route::get('/gadets', [GadgetController::class, 'index']);
-    Route::get('/gadets/{gadget}', [GadgetController::class, 'show']);
-    Route::put('/gadets/{gadget}', [GadgetController::class, 'update']);
-    Route::delete('/gadets/{gadget}', [GadgetController::class, 'destroy']);
+    Route::post('/gadgets/search', [GadgetController::class, 'search']);
+    Route::post('/gadgets', [GadgetController::class, 'store']);
+    Route::get('/gadgets', [GadgetController::class, 'index']);
+    Route::get('/gadgets/{gadget}', [GadgetController::class, 'show']);
+    Route::put('/gadgets/{gadget}', [GadgetController::class, 'update']);
+    Route::delete('/gadgets/{gadget}', [GadgetController::class, 'destroy']);
 });
