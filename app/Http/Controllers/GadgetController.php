@@ -15,7 +15,7 @@ class GadgetController extends Controller
     public function search(Request $request) {
         $request->validate(['key'=>'string|required']);
 
-        $gadgets = Product::where('name','like',"%$request->key%")
+        $gadgets = Gagdet::where('name','like',"%$request->key%")
             ->orWhere('description','like',"%$request->key%")->get();
 
         return response()->json($gadgets, 200);
@@ -41,7 +41,7 @@ class GadgetController extends Controller
 
     }
 
-    public function update(Request $request, Gadget $product) {
+    public function update(Request $request, Gadget $gadget) {
         try {
             $gadget->update($request->all());
             return response()->json($gadget, 202);
@@ -57,6 +57,6 @@ class GadgetController extends Controller
 
     public function index() {
         $gadgets = Gadget::orderBy('name')->get();
-        return response()->json($products, 200);
+        return response()->json($gadgets, 200);
     }
 }
